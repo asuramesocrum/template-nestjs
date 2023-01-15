@@ -2,6 +2,7 @@ import { CacheModule, Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { PrismaService } from './prisma.service';
+import {AppController} from "./app.controller";
 
 // import * as bcrypt from 'bcrypt';
 
@@ -18,7 +19,9 @@ import { PrismaService } from './prisma.service';
     // CUSTOM MODULE IMPORT
     // ...
   ],
-  controllers: [],
+  controllers: [
+      AppController,
+  ],
   providers: [
     PrismaService,
   ],
